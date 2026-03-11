@@ -44,7 +44,7 @@ L0: Python Basics
                      └─▶ L7: ODEs (simulating dynamic systems)
 ```
 
-Lessons are designed to be completed in order (L0 → L6), but students with prior Python experience can start at L1 or L2.
+Lessons are designed to be completed in order (L0 → L7), but students with prior Python experience can start at L1 or L2.
 
 ---
 
