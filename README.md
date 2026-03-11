@@ -15,6 +15,7 @@ A complete series of interactive Python tutorials designed for **graduate studen
 | L4 | [Intro to Pandas](L4_Intro_to_Pandas.ipynb) | Series, DataFrames, read/write CSV &amp; Excel, loc/iloc, Boolean indexing, missing data (dropna/fillna/interpolate), sorting, merge &amp; concat, pivot_table &amp; melt, apply/applymap, groupby, hierarchical indexing | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tarkeshsingh/python-for-sensorimotor-control/blob/main/L4_Intro_to_Pandas.ipynb) |
 | L5 | [Seaborn Data Visualization](L5_Seaborn_Data_Visualization.ipynb) | Line, bar, box, violin plots; lmplot regression; joint plots; bar+swarm overlays; KDE contours; PairGrid; pairplot; 3-D regression; heatmaps &amp; clustermaps | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tarkeshsingh/python-for-sensorimotor-control/blob/main/L5_Seaborn_Data_Visualization.ipynb) |
 | L6 | [Intro to OOP](L6_Intro_to_OOP.ipynb) | Classes, instances, attributes, methods, \_\_init\_\_/\_\_str\_\_, inheritance, super(), polymorphism, @property, encapsulation, composition, dataclasses | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tarkeshsingh/python-for-sensorimotor-control/blob/main/L6_Intro_to_OOP.ipynb) |
+| L7 | [Intro to ODEs](L7_Intro_to_ODEs.ipynb) | Euler method, RK4, solve_ivp, systems of ODEs, exponential decay, spring-mass-damper, inverted pendulum, two-state motor adaptation | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tarkeshsingh/python-for-sensorimotor-control/blob/main/L7_Intro_to_ODEs.ipynb) |
 
 ---
 
@@ -40,6 +41,7 @@ L0: Python Basics
            │    └─▶ L5: Seaborn (statistical visualization)
            └─▶ L4: Pandas (tabular data)
                 └─▶ L6: OOP (organizing your code)
+                     └─▶ L7: ODEs (simulating dynamic systems)
 ```
 
 Lessons are designed to be completed in order (L0 → L6), but students with prior Python experience can start at L1 or L2.
@@ -101,6 +103,9 @@ Statistical visualization: line plots with CI bands, grouped bar charts, box plo
 
 ### L6 — Introduction to OOP
 Organizing research code: classes, instances, class vs instance attributes, instance methods, \_\_init\_\_ and \_\_str\_\_, inheritance and super(), polymorphism, **@property for computed attributes**, **encapsulation with the \_ convention**, **composition ("has-a" relationships)** for building Experiment → Participant → Trial hierarchies, and **dataclasses** for reducing boilerplate in data containers. Includes a complete Signal → EMGSignal / KinematicSignal framework.
+
+### L7 — Introduction to ODEs
+Numerical simulation of dynamic systems: what an ODE is and why it matters for motor control, Euler's method (implementation, accuracy, and limitations), the 4th-order Runge-Kutta method (RK4) with step-by-step derivation, comparing Euler vs RK4 convergence, SciPy's `solve_ivp` with adaptive step sizes, and four worked examples — passive muscle force decay, spring-mass-damper limb dynamics, inverted pendulum postural control with PD controller, and a two-state motor adaptation model showing savings and spontaneous recovery.
 
 ---
 
