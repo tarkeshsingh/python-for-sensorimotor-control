@@ -106,12 +106,11 @@ Statistical visualization: line plots with CI bands, grouped bar charts, box plo
 ### L6 — Introduction to OOP
 Organizing research code: classes, instances, class vs instance attributes, instance methods, \_\_init\_\_ and \_\_str\_\_, inheritance and super(), polymorphism, **@property for computed attributes**, **encapsulation with the \_ convention**, **composition ("has-a" relationships)** for building Experiment → Participant → Trial hierarchies, and **dataclasses** for reducing boilerplate in data containers. Includes a complete Signal → EMGSignal / KinematicSignal framework.
 
-### L8 — Introduction to Linear Algebra
-Essential linear algebra for sensorimotor control: vectors (position, velocity, force), dot product and projections (mechanical work, force decomposition), cross product (torque computation), matrix multiplication (Jacobian mapping joint to hand velocities), 2-D rotation matrices and homogeneous transformations (coordinate frames, visuomotor rotation), solving linear systems with `np.linalg.solve`, matrix inverse and pseudo-inverse, determinant and rank, eigenvalues and eigenvectors (endpoint variability ellipses, system stability), SVD (muscle synergy extraction from EMG), least-squares regression (Fitts's law fitting), PCA from scratch, and state-space representations of dynamical systems with stability analysis.
-
 ### L7 — Introduction to ODEs
 Numerical simulation of dynamic systems: what an ODE is and why it matters for motor control, Euler's method (implementation, accuracy, and limitations), the 4th-order Runge-Kutta method (RK4) with step-by-step derivation, comparing Euler vs RK4 convergence, SciPy's `solve_ivp` with adaptive step sizes, and four worked examples — passive muscle force decay, spring-mass-damper limb dynamics, inverted pendulum postural control with PD controller, and a two-state motor adaptation model showing savings and spontaneous recovery.
 
+### L8 — Introduction to Linear Algebra
+Essential linear algebra for sensorimotor control: vectors (position, velocity, force), dot product and projections (mechanical work, force decomposition), cross product (torque computation), matrix multiplication (Jacobian mapping joint to hand velocities), 2-D rotation matrices and homogeneous transformations (coordinate frames, visuomotor rotation), solving linear systems with `np.linalg.solve`, matrix inverse and pseudo-inverse, determinant and rank, eigenvalues and eigenvectors (endpoint variability ellipses, system stability), SVD (muscle synergy extraction from EMG), least-squares regression (Fitts's law fitting), PCA from scratch, and state-space representations of dynamical systems with stability analysis.
 ---
 
 ## ✏️ Each Lesson Includes
