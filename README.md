@@ -46,7 +46,7 @@ L0: Python Basics
                      └─▶ L8: Linear Algebra (transforms, decompositions, PCA)
 ```
 
-Lessons are designed to be completed in order (L0 → L6), but students with prior Python experience can start at L1 or L2.
+Lessons are designed to be completed in order (L0 → L8), but students with prior Python experience can start at L1 or L2.
 
 ---
 
