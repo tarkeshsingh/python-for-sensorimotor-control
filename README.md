@@ -111,6 +111,7 @@ Numerical simulation of dynamic systems: what an ODE is and why it matters for m
 
 ### L8 — Introduction to Linear Algebra
 Essential linear algebra for sensorimotor control: vectors (position, velocity, force), dot product and projections (mechanical work, force decomposition), cross product (torque computation), matrix multiplication (Jacobian mapping joint to hand velocities), 2-D rotation matrices and homogeneous transformations (coordinate frames, visuomotor rotation), solving linear systems with `np.linalg.solve`, matrix inverse and pseudo-inverse, determinant and rank, eigenvalues and eigenvectors (endpoint variability ellipses, system stability), SVD (muscle synergy extraction from EMG), least-squares regression (Fitts's law fitting), PCA from scratch, and state-space representations of dynamical systems with stability analysis.
+
 ---
 
 ## ✏️ Each Lesson Includes
