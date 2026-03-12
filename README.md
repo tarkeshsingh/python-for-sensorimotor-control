@@ -17,6 +17,7 @@ A complete series of interactive Python tutorials designed for **graduate studen
 | L6 | [Intro to OOP](L6_Intro_to_OOP.ipynb) | Classes, instances, attributes, methods, \_\_init\_\_/\_\_str\_\_, inheritance, super(), polymorphism, @property, encapsulation, composition, dataclasses | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tarkeshsingh/python-for-sensorimotor-control/blob/main/L6_Intro_to_OOP.ipynb) |
 | L7 | [Intro to ODEs](L7_Intro_to_ODEs.ipynb) | Euler method, RK4, solve_ivp, systems of ODEs, exponential decay, spring-mass-damper, inverted pendulum, two-state motor adaptation | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tarkeshsingh/python-for-sensorimotor-control/blob/main/L7_Intro_to_ODEs.ipynb) |
 | L8 | [Intro to Linear Algebra](L8_Intro_to_LinearAlgebra.ipynb) | Vectors, dot/cross product, rotation matrices, homogeneous transforms, solving Ax=b, inverse, pseudo-inverse, eigendecomposition, SVD, least-squares, PCA, state-space models | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tarkeshsingh/python-for-sensorimotor-control/blob/main/L8_Intro_to_LinearAlgebra.ipynb) |
+| L9 | [Signal Processing](L9_SignalProcessing.ipynb) | FFT, amplitude spectrum, frequency-domain filtering, power spectral density (Welch), spectrogram, Butterworth filters (low/high/band-pass/notch), zero-phase filtering (filtfilt vs lfilter) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tarkeshsingh/python-for-sensorimotor-control/blob/main/L9_SignalProcessing.ipynb) |
 
 ---
 
@@ -43,10 +44,11 @@ L0: Python Basics
            └─▶ L4: Pandas (tabular data)
                 └─▶ L6: OOP (organizing your code)
                      ├─▶ L7: ODEs (simulating dynamic systems)
-                     └─▶ L8: Linear Algebra (transforms, decompositions, PCA)
+                     ├─▶ L8: Linear Algebra (transforms, decompositions, PCA)
+                     └─▶ L9: Signal Processing (FFT, filtering, PSD)
 ```
 
-Lessons are designed to be completed in order (L0 → L8), but students with prior Python experience can start at L1 or L2.
+Lessons are designed to be completed in order (L0 → L9), but students with prior Python experience can start at L1 or L2.
 
 ---
 
@@ -59,7 +61,7 @@ Click any **"Open in Colab"** badge in the table above. Colab provides a free Py
 ```bash
 # Clone this repository
 git clone https://github.com/tarkeshsingh/python-for-sensorimotor-control.git
-cd YOUR_REPO_NAME
+cd python-for-sensorimotor-control
 
 # Install dependencies
 pip install numpy matplotlib pandas seaborn statsmodels
@@ -79,6 +81,7 @@ All notebooks use standard scientific Python libraries that come pre-installed i
 - Matplotlib
 - Pandas
 - Seaborn
+- SciPy (L7, L8, L9 — ODE solving, linear algebra, signal processing)
 - Statsmodels (L5 only — for 3-D regression example)
 
 ---
@@ -111,6 +114,9 @@ Numerical simulation of dynamic systems: what an ODE is and why it matters for m
 
 ### L8 — Introduction to Linear Algebra
 Essential linear algebra for sensorimotor control: vectors (position, velocity, force), dot product and projections (mechanical work, force decomposition), cross product (torque computation), matrix multiplication (Jacobian mapping joint to hand velocities), 2-D rotation matrices and homogeneous transformations (coordinate frames, visuomotor rotation), solving linear systems with `np.linalg.solve`, matrix inverse and pseudo-inverse, determinant and rank, eigenvalues and eigenvectors (endpoint variability ellipses, system stability), SVD (muscle synergy extraction from EMG), least-squares regression (Fitts's law fitting), PCA from scratch, and state-space representations of dynamical systems with stability analysis.
+
+### L9 — Signal Processing
+Processing real experimental signals: simulating composite signals with known frequency components, the Fast Fourier Transform (FFT) using the modern `scipy.fft` API, amplitude spectra, frequency-domain filtering (ideal low-pass with inverse FFT), power spectra with `rfft`, **power spectral density via Welch's method** (the standard for neuroscience papers), spectrograms for time-varying frequency content, **Butterworth filter design** (order, cutoff, frequency response), four reusable filter functions (low-pass, high-pass, band-pass, band-stop/notch), filter demos on white noise, and **zero-phase filtering with `filtfilt`** vs causal `lfilter`. Includes a reference table of common filter settings for kinematics, force plates, EMG, EEG, and power-line removal.
 
 ---
 
