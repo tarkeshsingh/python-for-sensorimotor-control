@@ -19,6 +19,7 @@ A complete series of interactive Python tutorials designed for **graduate studen
 | L8a | [Intro to Linear Algebra](L8a_Intro_to_LinearAlgebra.ipynb) | Vectors, dot/cross product, rotation matrices, homogeneous transforms, solving Ax=b, inverse, pseudo-inverse, determinant &amp; rank, eigendecomposition, SVD, least-squares, PCA, state-space models | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tarkeshsingh/python-for-sensorimotor-control/blob/main/L8a_Intro_to_LinearAlgebra.ipynb) |
 | L8b | [Eigenvectors &amp; Eigenvalues](L8b_Eigenvectors_and_Eigenvalues.ipynb) | Geometric intuition, characteristic equation, eig vs eigh, covariance ellipses with χ² scaling, PCA of neural populations, participation ratio &amp; shuffled controls, continuous- and discrete-time stability, two-state learning timescales, stiffness ellipses, non-normal dynamics, common gotchas | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tarkeshsingh/python-for-sensorimotor-control/blob/main/L8b_Eigenvectors_and_Eigenvalues.ipynb) |
 | L9 | [Signal Processing](L9_SignalProcessing.ipynb) | FFT, amplitude spectrum, frequency-domain filtering, power spectral density (Welch), spectrogram, Butterworth filters (low/high/band-pass/notch), zero-phase filtering (filtfilt vs lfilter) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tarkeshsingh/python-for-sensorimotor-control/blob/main/L9_SignalProcessing.ipynb) |
+| L10 | [Static Optimization](L10_Optimization.ipynb) | Cost functions, `scipy.optimize.minimize`, local vs global minima &amp; multi-start, bounds, equality constraints, SLSQP, analytic gradients (`jac`), underdetermined systems &amp; null space, cost exponent trade-offs, muscle redundancy &amp; the Crowninshield criterion | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tarkeshsingh/python-for-sensorimotor-control/blob/main/L10_Optimization.ipynb) |
 
 ---
 
@@ -47,10 +48,11 @@ L0: Python Basics
                      ├─▶ L7: ODEs (simulating dynamic systems)
                      ├─▶ L8a: Linear Algebra (transforms, decompositions, PCA)
                      │    └─▶ L8b: Eigenvectors & Eigenvalues (variability & dynamics)
-                     └─▶ L9: Signal Processing (FFT, filtering, PSD)
+                     ├─▶ L9: Signal Processing (FFT, filtering, PSD)
+                     └─▶ L10: Static Optimization (constrained minimization, redundancy)
 ```
 
-Lessons are designed to be completed in order (L0 → L9), but students with prior Python experience can start at L1 or L2. **L8b is a deep dive that assumes L8a §1–10**; work through L8a first.
+Lessons are designed to be completed in order (L0 → L10), but students with prior Python experience can start at L1 or L2. **L8b is a deep dive that assumes L8a §1–10**; work through L8a first. **L10 leans on L8a's treatment of rank and underdetermined systems** — read L8a §on solving Ax=b before starting Part III.
 
 ---
 
@@ -83,7 +85,7 @@ All notebooks use standard scientific Python libraries that come pre-installed i
 - Matplotlib
 - Pandas
 - Seaborn
-- SciPy (L7, L8a, L8b, L9 — ODE solving, linear algebra, statistics, signal processing)
+- SciPy (L7, L8a, L8b, L9, L10 — ODE solving, linear algebra, statistics, signal processing, optimization)
 - Statsmodels (L5 only — for 3-D regression example)
 
 ---
@@ -122,6 +124,9 @@ A deep dive into the one decomposition that appears in nearly every corner of mo
 
 ### L9 — Signal Processing
 Processing real experimental signals: simulating composite signals with known frequency components, the Fast Fourier Transform (FFT) using the modern `scipy.fft` API, amplitude spectra, frequency-domain filtering (ideal low-pass with inverse FFT), power spectra with `rfft`, **power spectral density via Welch's method** (the standard for neuroscience papers), spectrograms for time-varying frequency content, **Butterworth filter design** (order, cutoff, frequency response), four reusable filter functions (low-pass, high-pass, band-pass, band-stop/notch), filter demos on white noise, and **zero-phase filtering with `filtfilt`** vs causal `lfilter`. Includes a reference table of common filter settings for kinematics, force plates, EMG, EEG, and power-line removal.
+
+### L10 — Static Optimization
+Predicting muscle forces when the mechanics alone cannot: what a cost function is and why it is an **assumption rather than a measurement**, minimizing with `scipy.optimize.minimize`, and the trap that `success: True` means only *locally* stuck — demonstrated on a cost with two minima where the starting point silently decides the answer, and answered with **multi-start**. Then constrained optimization: bounds for non-negative variables (a muscle pulls but never pushes), equality constraints phrased as *expression = 0*, **SLSQP** for problems with both, and **analytic gradients via `jac`** with the speed-up measured. Part III builds the central idea on a problem you can draw — one equation in two unknowns, where every point on a line is a valid answer and **the cost function alone decides which one you get** — and shows how the exponent *n* trades a lower peak for a higher total. Part IV is that same structure four dimensions larger: six muscles, two joint torques, the **Crowninshield & Brand (1981) criterion**, and a closing section on reading the solution critically — verifying the constraint yourself, checking the bounds, testing convexity by multi-start, and seeing from the moment-arm geometry why non-negativity removes far more freedom than the null-space dimension suggests.
 
 ---
 
